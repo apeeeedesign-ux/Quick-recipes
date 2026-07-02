@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>チョキチョキご飯 | 栄養士監修・調理バサミで時短レシピ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Zen+Maru+Gothic:wght@400;500;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #FF6B6B;
+    --primary-light: #FFE8E8;
+    --primary-dark: #E85555;
+    --green: #5DBB8A;
+    --green-light: #E6F7EF;
+    --yellow: #FFD166;
+    --yellow-light: #FFF8E6;
+    --teal: #4ECDC4;
+    --teal-light: #E6FAF9;
+    --orange: #FF9F43;
+    --orange-light: #FFF0E0;
+    --purple: #A78BFA;
+    --purple-light: #F0EBFF;
+    --pink: #F9A8D4;
+    --pink-light: #FEF0F7;
+    --bg: #FFFAF6;
+    --card-bg: #FFFFFF;
+    --text: #3D2B1F;
+    --text-muted: #9B8B80;
+    --border: #F0E8E0;
+    --shadow: 0 4px 20px rgba(255,107,107,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ========== HEADER ========== */
+  header {
+    background: white;
+    padding: 0 40px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 16px rgba(255,107,107,0.1);
+    border-bottom: 3px solid var(--primary);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--primary), var(--orange));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transform: rotate(-5deg);
+    box-shadow: 0 4px 12px rgba(255,107,107,0.35);
+  }
+
+  .logo-text {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+
+  .logo-supervised {
+    font-size: 10px;
+    color: white;
+    background: var(--green);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    color: var(--text-muted);
+    display: block;
+    font-weight: 500;
+    margin-top: 1px;
+    letter-spacing: 0.1em;
+  }
+
+  nav { display: flex; gap: 28px; }
+  nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s;
+    letter-spacing: 0.04em;
+  }
+  nav a:hover { color: var(--primary); }
+
+  /* ========== HERO ========== */
+  .hero {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFF9F0 50%, #F0FFF8 100%);
+    padding: 70px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,107,107,0.12) 0%, transparent 70%);
+    right: -100px; top: -100px;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(93,187,138,0.1) 0%, transparent 70%);
+    left: -80px; bottom: -80px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.5s ease both;
+    box-shadow: 0 4px 12px rgba(255,107,107,0.4);
+  }
+
+  .hero h1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: clamp(30px, 5vw, 52px);
+    color: var(--text);
+    line-height: 1.4;
+    font-weight: 700;
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+
+  .hero h1 .accent { color: var(--primary); }
+  .hero h1 .accent2 { color: var(--green); }
+
+  .hero-desc {
+    margin-top: 16px;
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.9;
+    max-width: 460px;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 16px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    animation: fadeUp 0.5s 0.3s ease both;
+  }
+
+  .stat-pill {
+    background: white;
+    border-radius: 16px;
+    padding: 14px 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .stat-emoji { font-size: 24px; }
+  .stat-val { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 800; color: var(--primary); line-height: 1; }
+  .stat-val span { font-size: 13px; color: var(--text-muted); font-weight: 700; }
+  .stat-lbl { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+
+  /* ========== NUTRITION BANNER ========== */
+  .nutrition-section {
+    padding: 60px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .section-icon {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .section-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-weight: 500;
+  }
+
+  .nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .nutri-card {
+    border-radius: 20px;
+    padding: 18px 12px 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    border: 2.5px solid transparent;
+  }
+
+  .nutri-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.13);
+    border-color: rgba(255,255,255,0.8);
+  }
+
+  .nutri-card:active { transform: scale(0.97); }
+
+  .nutri-food-icons {
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: 2px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+
+  .nutri-name {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .nutri-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.7);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 100px;
+  }
+
+  .nutri-tap-hint {
+    font-size: 10px;
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  /* ── 栄養詳細モーダル ── */
+  .nutri-modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(61,43,31,0.5);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+  }
+  .nutri-modal-overlay.open {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+  }
+  .nutri-modal {
+    background: white;
+    border-radius: 28px;
+    max-width: 480px; width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+  }
+  .nutri-modal-hero {
+    border-radius: 28px 28px 0 0;
+    padding: 36px 28px 28px;
+    position: relative;
+    text-align: center;
+  }
+  .nutri-modal-close {
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 34px; height: 34px;
+    background: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.2s;
+  }
+  .nutri-modal-close:hover { background: white; color: var(--text); }
+  .nutri-modal-icons { font-size: 48px; margin-bottom: 12px; }
+  .nutri-modal-name {
+    font-size: 26px; font-weight: 700;
+    color: var(--text); margin-bottom: 6px;
+  }
+  .nutri-modal-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.75);
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 100px;
+  }
+  .nutri-modal-body { padding: 0 28px 32px; }
+  .nutri-modal-section {
+    margin-top: 20px;
+  }
+  .nutri-modal-section-title {
+    font-size: 13px; font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .nutri-modal-section-title::before {
+    content: '';
+    display: block;
+    width: 14px; height: 3px;
+    border-radius: 2px;
+    background: var(--primary);
+  }
+  .nutri-effect-box {
+    background: var(--bg);
+    border-radius: 16px;
+    padding: 16px 18px;
+    font-size: 14px; line-height: 1.85;
+    color: var(--text);
+    border: 1.5px solid var(--border);
+  }
+  .nutri-effect-box p { margin-bottom: 6px; }
+  .nutri-effect-box p:last-child { margin-bottom: 0; }
+  .nutri-food-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+  .nutri-food-tag {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 100px;
+    padding: 5px 14px;
+    font-size: 13px; font-weight: 700;
+    color: var(--text);
+  }
+
+  /* Colors per card */
+  .nc-yellow { background: linear-gradient(135deg, #FFF3CD, #FFE89A); color: #7A5A00; }
+  .nc-green  { background: linear-gradient(135deg, #D4F5E6, #A8EDD0); color: #1A5C3A; }
+  .nc-orange { background: linear-gradient(135deg, #FFE8CC, #FFCE99); color: #7A3A00; }
+  .nc-pink   { background: linear-gradient(135deg, #FFE0F0, #FFC2E0); color: #7A1A50; }
+  .nc-teal   { background: linear-gradient(135deg, #D0F5F3, #9EEAE7); color: #0D5550; }
+  .nc-purple { background: linear-gradient(135deg, #EDE0FF, #D6BEFF); color: #4A2080; }
+  .nc-red    { background: linear-gradient(135deg, #FFD6D6, #FFB3B3); color: #7A1010; }
+  .nc-blue   { background: linear-gradient(135deg, #D6EEFF, #A8D8FF); color: #0A3A6A; }
+
+  /* ========== INGREDIENT SELECTOR ========== */
+  .selector-section {
+    padding: 20px 40px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .category-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+
+  .cat-tab {
+    padding: 9px 20px;
+    border: 2px solid var(--border);
+    background: white;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Zen Maru Gothic', sans-serif;
+  }
+
+  .cat-tab:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+  .cat-tab.active { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 12px rgba(255,107,107,0.3); }
+
+  .ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+  }
+
+  .ingredient-card {
+    background: white;
+    border: 2.5px solid var(--border);
+    border-radius: 18px;
+    padding: 16px 10px 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ingredient-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(255,107,107,0.18);
+    background: var(--primary-light);
+  }
+
+  .ingredient-card.selected {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 4px 16px rgba(255,107,107,0.25);
+  }
+
+  .ingredient-card.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 6px; right: 9px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .ingredient-emoji { font-size: 34px; display: block; }
+  .ingredient-name { font-size: 13px; font-weight: 700; margin-top: 8px; color: var(--text); line-height: 1.3; }
+  .ingredient-count { font-size: 11px; color: var(--text-muted); margin-top: 3px; font-weight: 500; }
+
+  /* ========== RECIPES ========== */
+  .recipes-section {
+    background: linear-gradient(180deg, #FFF5F0 0%, #F5FFF9 100%);
+    padding: 60px 40px 80px;
+    min-height: 400px;
+  }
+
+  .recipes-inner { max-width: 1100px; margin: 0 auto; }
+
+  .recipes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .selected-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255,107,107,0.15);
+  }
+
+  .result-count { font-size: 13px; color: var(--text-muted); font-weight: 700; }
+
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px;
+  }
+
+  .recipe-card {
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: all 0.25s;
+    cursor: pointer;
+    animation: fadeUp 0.4s ease both;
+    border: 2px solid transparent;
+  }
+
+  .recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(255,107,107,0.15);
+    border-color: var(--primary-light);
+  }
+
+  .recipe-thumb {
+    height: 150px;
+    background: linear-gradient(135deg, #FFF0EE, #FFF8F0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+    position: relative;
+  }
+
+  .time-badge {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: var(--primary);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 100px;
+    box-shadow: 0 3px 8px rgba(255,107,107,0.4);
+  }
+
+  .recipe-body { padding: 18px 18px 20px; }
+
+  .recipe-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .recipe-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .recipe-tag.main { background: var(--primary-light); color: var(--primary-dark); }
+  .recipe-tag.sub  { background: var(--green-light);   color: var(--green); }
+
+  .recipe-name {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 7px;
+  }
+
+  .recipe-desc { font-size: 13px; color: var(--text-muted); line-height: 1.75; }
+
+  .scissors-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-top: 10px;
+    background: var(--primary-light);
+    padding: 7px 10px;
+    border-radius: 10px;
+    line-height: 1.5;
+  }
+
+  .recipe-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1.5px dashed var(--border);
+  }
+
+  .difficulty { display: flex; gap: 4px; }
+  .diff-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .diff-dot.filled { background: var(--yellow); box-shadow: 0 0 4px rgba(255,209,102,0.6); }
+
+  .recipe-servings { font-size: 12px; color: var(--text-muted); font-weight: 700; }
+
+  /* ========== EMPTY STATE ========== */
+  .empty-state { text-align: center; padding: 70px 20px; }
+  .empty-icon { font-size: 60px; margin-bottom: 16px; opacity: 0.35; }
+  .empty-text { font-size: 18px; color: var(--text-muted); font-weight: 700; }
+  .empty-sub { font-size: 13px; color: #C0B0A8; margin-top: 8px; }
+
+  /* ========== MODAL ========== */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(61,43,31,0.55);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(6px);
+  }
+
+  .modal-overlay.open {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+  }
+
+  .modal {
+    background: white;
+    border-radius: 28px;
+    max-width: 600px; width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+  }
+
+  .modal-hero {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 96px;
+    background: linear-gradient(135deg, #FFF0EE, #FFF8F0);
+    position: relative;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 36px; height: 36px;
+    background: white;
+    color: var(--text-muted);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .modal-close:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+  .modal-body { padding: 26px 28px 32px; }
+
+  .modal-title { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+
+  .modal-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .meta-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 100px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
+  .modal-desc { font-size: 14px; color: var(--text-muted); line-height: 1.8; margin-bottom: 4px; }
+
+  .modal-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .modal-section-title .ms-dot {
+    width: 8px; height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .ingredients-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+
+  .ingredients-list li {
+    font-size: 13px;
+    padding: 7px 12px;
+    background: var(--bg);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1.5px solid var(--border);
+  }
+
+  .ingredients-list li .amount { color: var(--text-muted); font-weight: 500; }
+
+  .steps-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .step-item { display: flex; gap: 12px; }
+
+  .step-num {
+    width: 28px; height: 28px; min-width: 28px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 2px;
+    box-shadow: 0 3px 8px rgba(255,107,107,0.35);
+  }
+
+  .step-text { font-size: 14px; line-height: 1.75; color: var(--text); flex: 1; }
+  .step-text.scissors-step { color: var(--primary-dark); font-weight: 700; }
+
+  .modal-tip {
+    background: linear-gradient(135deg, #FFF0EE, #FFF8EE);
+    border: 2px dashed var(--primary);
+    padding: 14px 16px;
+    border-radius: 16px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  .modal-tip strong { color: var(--primary-dark); display: block; margin-bottom: 4px; font-size: 14px; }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: white;
+    border-top: 3px solid var(--border);
+    text-align: center;
+    padding: 40px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  footer .footer-logo {
+    font-family: 'Pacifico', cursive;
+    color: var(--primary);
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    header { padding: 0 20px; }
+    nav { display: none; }
+    .hero { padding: 48px 20px 60px; }
+    .hero-stats { gap: 10px; }
+    .stat-pill { padding: 10px 16px; }
+    .nutrition-section, .selector-section { padding: 40px 20px; }
+    .recipes-section { padding: 40px 20px 60px; }
+    .ingredients-grid { grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); }
+    .recipes-grid { grid-template-columns: 1fr; }
+    .ingredients-list { grid-template-columns: 1fr; }
+    .nutrition-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-mark">✂</div>
+    <div>
+      <span class="logo-supervised">栄養士監修</span>
+      <span class="logo-text">チョキチョキ✂︎ご飯</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#nutrition">栄養ガイド</a>
+    <a href="#selector">食材から探す</a>
+    <a href="#">人気レシピ</a>
+    <a href="#">使い方のコツ</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">✂ 調理バサミ1本でOK！</div>
+    <h1>切って、<span class="accent">そのまま</span>。<br>包丁いらずの<span class="accent2">時短ごはん</span>。</h1>
+    <p class="hero-desc">包丁いらずのラクラク時短ご飯。</p>
+    <div class="hero-stats">
+      <div class="stat-pill">
+        <span class="stat-emoji">📖</span>
+        <div>
+          <div class="stat-val" id="totalCount">0<span>品</span></div>
+          <div class="stat-lbl">収録レシピ</div>
+        </div>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-emoji">⏱</span>
+        <div>
+          <div class="stat-val">15<span>分</span></div>
+          <div class="stat-lbl">平均調理時間</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRITION BANNER -->
+<section class="nutrition-section" id="nutrition">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--green-light); font-size:22px;">🥗</div>
+    <div>
+      <div class="section-title">食材の栄養パワーをチェック！</div>
+      <div class="section-sub">気になる栄養素をタップ → 詳しい効果をチェック✨</div>
+    </div>
+  </div>
+  <div class="nutrition-grid">
+
+    <div class="nutri-card nc-yellow" onclick="openNutriModal('vitb')">
+      <div class="nutri-food-icons">🥩🍗🥚🍄</div>
+      <div class="nutri-name">ビタミンB群</div>
+      <span class="nutri-badge">疲労回復</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-orange" onclick="openNutriModal('vita')">
+      <div class="nutri-food-icons">🐟🥚🥦</div>
+      <div class="nutri-name">ビタミンA</div>
+      <span class="nutri-badge">美肌・免疫</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-teal" onclick="openNutriModal('vitc')">
+      <div class="nutri-food-icons">🥬🥦🍅</div>
+      <div class="nutri-name">ビタミンC</div>
+      <span class="nutri-badge">美容・風邪予防</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-red" onclick="openNutriModal('iron')">
+      <div class="nutri-food-icons">🥩🍖⬜🌿</div>
+      <div class="nutri-name">鉄分</div>
+      <span class="nutri-badge">貧血予防</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-green" onclick="openNutriModal('calcium')">
+      <div class="nutri-food-icons">⬜🐟🥛</div>
+      <div class="nutri-name">カルシウム</div>
+      <span class="nutri-badge">骨・歯の健康</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-purple" onclick="openNutriModal('protein')">
+      <div class="nutri-food-icons">🍗🥩🦐🥚</div>
+      <div class="nutri-name">タンパク質</div>
+      <span class="nutri-badge">筋肉・代謝</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-pink" onclick="openNutriModal('dha')">
+      <div class="nutri-food-icons">🐟🦑🦐🐠</div>
+      <div class="nutri-name">DHA・EPA</div>
+      <span class="nutri-badge">脳活・血液</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+    <div class="nutri-card nc-blue" onclick="openNutriModal('fiber')">
+      <div class="nutri-food-icons">🥬🥦🍄🌾</div>
+      <div class="nutri-name">食物繊維</div>
+      <span class="nutri-badge">腸活・血糖</span>
+      <div class="nutri-tap-hint">タップして詳しく見る →</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NUTRITION DETAIL MODAL -->
+<div class="nutri-modal-overlay" id="nutriModalOverlay" onclick="closeNutriModal(event)">
+  <div class="nutri-modal" id="nutriModal">
+    <div class="nutri-modal-hero" id="nutriModalHero"></div>
+    <div class="nutri-modal-body" id="nutriModalBody"></div>
+  </div>
+</div>
+
+<!-- INGREDIENT SELECTOR -->
+<section class="selector-section" id="selector">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--primary-light); font-size:22px;">🥘</div>
+    <div>
+      <div class="section-title">食材から探す</div>
+      <div class="section-sub">気になる食材をタップしてレシピを見つけよう！</div>
+    </div>
+  </div>
+  <div class="category-tabs" id="categoryTabs"></div>
+  <div class="ingredients-grid" id="ingredientsGrid"></div>
+</section>
+
+<!-- RECIPES -->
+<section class="recipes-section" id="recipesSection">
+  <div class="recipes-inner">
+    <div class="recipes-header">
+      <div id="selectedTag"></div>
+      <div class="result-count" id="resultCount"></div>
+    </div>
+    <div class="recipes-grid" id="recipesGrid">
+      <div class="empty-state" style="grid-column:1/-1">
+        <div class="empty-icon">✂</div>
+        <div class="empty-text">食材を選んでレシピを探そう♪</div>
+        <div class="empty-sub">上のメニューから食材を選択してください</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <div class="modal-hero" id="modalHero"></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo" style="font-family:'Zen Maru Gothic',sans-serif;font-weight:700;">✂ チョキチョキご飯</div>
+  <p>栄養士監修 × 調理バサミで、もっと自由においしく。&copy; 2025 Choki Choki Gohan</p>
+</footer>
+
+<script>
+// ============================================================
+// NUTRITION DATA
+// ============================================================
+const NUTRI_DATA = {
+  vitb: {
+    name: 'ビタミンB群',
+    icons: '🥩🍗🥚🍄',
+    badge: '疲労回復',
+    colorClass: 'nc-yellow',
+    foods: [
+      { emoji: '🥩', name: '豚肉' },
+      { emoji: '🍗', name: '鶏肉' },
+      { emoji: '🥚', name: '卵' },
+      { emoji: '🍄', name: 'きのこ' },
+      { emoji: '🐟', name: 'サーモン' },
+    ],
+    effects: [
+      { icon: '⚡', title: 'エネルギー代謝をサポート', desc: '糖質・脂質・タンパク質をエネルギーに変える働きを助けます。不足すると疲れやすくなるため、毎日の食事で積極的に摂りたい栄養素です。' },
+      { icon: '💪', title: '疲れにくい体づくり', desc: '疲労物質（乳酸）の分解を促進！仕事や運動後の回復スピードを上げてくれます。忙しい毎日を元気に過ごすための頼れるビタミンです。' },
+      { icon: '🧠', title: '神経・脳の正常な働きを維持', desc: '神経伝達物質の合成に関わり、集中力や気分の安定にも影響します。ストレスが多い現代人に特に意識してほしい栄養素です。' },
+    ],
+  },
+  vita: {
+    name: 'ビタミンA',
+    icons: '🐟🥚🥦',
+    badge: '美肌・免疫',
+    colorClass: 'nc-orange',
+    foods: [
+      { emoji: '🐟', name: 'サーモン' },
+      { emoji: '🥚', name: '卵' },
+      { emoji: '🥦', name: 'ブロッコリー' },
+      { emoji: '🥕', name: 'にんじん' },
+    ],
+    effects: [
+      { icon: '👁️', title: '目の健康を守る', desc: '暗い場所でも見えるための「ロドプシン」という物質の材料になります。不足すると夜盲症（暗いところで見えにくくなる症状）につながります。' },
+      { icon: '✨', title: '皮膚・粘膜を健康に保つ', desc: '皮膚や鼻・喉・腸の粘膜を正常に保ち、乾燥肌や肌荒れを防ぐ美容ビタミンです。外からの細菌やウイルスをブロックするバリアの維持にも貢献します。' },
+      { icon: '🛡️', title: '免疫力のサポート', desc: '免疫細胞の活性化を助け、病気に負けない体づくりをサポート。かぜをひきやすいと感じたら、ビタミンAが不足しているサインかも！' },
+    ],
+  },
+  vitc: {
+    name: 'ビタミンC',
+    icons: '🥬🥦🍅',
+    badge: '美容・風邪予防',
+    colorClass: 'nc-teal',
+    foods: [
+      { emoji: '🥬', name: 'キャベツ' },
+      { emoji: '🥦', name: 'ブロッコリー' },
+      { emoji: '🍅', name: 'トマト' },
+      { emoji: '🍋', name: 'レモン' },
+    ],
+    effects: [
+      { icon: '💆', title: 'コラーゲン生成を促進', desc: '肌・血管・骨の材料となるコラーゲンの合成に不可欠。ビタミンCが豊富な食材を食べることで、ふっくらとしたハリ肌を内側から作ります。' },
+      { icon: '🤧', title: '風邪・感染症の予防', desc: '白血球の機能を高めて免疫力をアップ！かぜが流行る季節はビタミンCの豊富な野菜をしっかり食べることが大切です。' },
+      { icon: '🌟', title: '強い抗酸化作用', desc: '体内の活性酸素を除去し、老化・生活習慣病の予防に効果があります。鉄分の吸収も助けてくれる、まさに万能な栄養素！' },
+    ],
+  },
+  iron: {
+    name: '鉄分',
+    icons: '🥩🍖⬜🌿',
+    badge: '貧血予防',
+    colorClass: 'nc-red',
+    foods: [
+      { emoji: '🥩', name: '牛肉' },
+      { emoji: '🥩', name: '豚バラ' },
+      { emoji: '⬜', name: '豆腐' },
+      { emoji: '🌿', name: '小松菜' },
+    ],
+    effects: [
+      { icon: '🩸', title: '貧血を予防・改善', desc: '赤血球のヘモグロビンの材料となり、全身に酸素を届ける役割を担います。不足すると貧血・立ちくらみ・だるさの原因になります。女性は特に意識して摂取が大切！' },
+      { icon: '🫁', title: '全身に酸素を運ぶ', desc: '筋肉中の酸素貯蔵にも関わっています。鉄分が十分にあると、運動能力の維持・向上にも効果があります。' },
+      { icon: '💡', title: '集中力・パフォーマンスアップ', desc: '脳への酸素供給が安定することで、集中力・判断力の維持につながります。疲れやすい・頭がぼーっとするときは鉄不足のサインかも。' },
+    ],
+  },
+  calcium: {
+    name: 'カルシウム',
+    icons: '⬜🐟🥛',
+    badge: '骨・歯の健康',
+    colorClass: 'nc-green',
+    foods: [
+      { emoji: '⬜', name: '豆腐' },
+      { emoji: '🐟', name: 'サーモン' },
+      { emoji: '🥛', name: '牛乳' },
+      { emoji: '🌿', name: '小松菜' },
+    ],
+    effects: [
+      { icon: '🦴', title: '骨と歯を丈夫に保つ', desc: '体内のカルシウムの99%は骨と歯に存在。成長期の骨形成はもちろん、大人になってからも骨密度を維持するために毎日の摂取が重要です。' },
+      { icon: '😌', title: 'ストレス緩和・リラックス効果', desc: '神経の興奮を抑え、心を落ち着かせる効果があります。イライラや不眠が続くときはカルシウム不足が関係していることも。' },
+      { icon: '💓', title: '心臓・筋肉の正常な動きを支える', desc: '心臓の拍動や筋肉の収縮・弛緩にも関わっています。全身の機能を支える縁の下の力持ち的な栄養素です。' },
+    ],
+  },
+  protein: {
+    name: 'タンパク質',
+    icons: '🍗🥩🦐🥚',
+    badge: '筋肉・代謝',
+    colorClass: 'nc-purple',
+    foods: [
+      { emoji: '🍗', name: '鶏肉' },
+      { emoji: '🥩', name: '牛肉・豚肉' },
+      { emoji: '🦐', name: 'エビ' },
+      { emoji: '🥚', name: '卵' },
+      { emoji: '⬜', name: '豆腐' },
+    ],
+    effects: [
+      { icon: '💪', title: '筋肉の材料になる', desc: '体を動かす筋肉の主成分。運動後にタンパク質をしっかり摂ることで、筋肉の修復・成長を促します。ダイエット中も筋肉を守るために欠かせません。' },
+      { icon: '✨', title: '髪・肌・爪を美しく保つ', desc: '髪の毛（ケラチン）・肌（コラーゲン）・爪もタンパク質でできています。不足すると髪が細くなったり、肌がくすんだりすることも。' },
+      { icon: '🔥', title: '基礎代謝を上げる', desc: 'タンパク質は消化・吸収の際に最もエネルギーを消費する栄養素（熱産生効果）。筋肉量を維持することでも代謝アップにつながります。' },
+    ],
+  },
+  dha: {
+    name: 'DHA・EPA',
+    icons: '🐟🦑🦐🐠',
+    badge: '脳活・血液',
+    colorClass: 'nc-pink',
+    foods: [
+      { emoji: '🐟', name: 'サーモン' },
+      { emoji: '🦑', name: 'イカ' },
+      { emoji: '🦐', name: 'エビ' },
+      { emoji: '🐠', name: 'ツナ' },
+    ],
+    effects: [
+      { icon: '🧠', title: '脳の働きを活性化（DHA）', desc: '脳の細胞膜の主要成分。記憶力・集中力・学習能力の維持に関わります。子どもの脳の発達にも、大人の認知機能の維持にも重要な成分です。' },
+      { icon: '🩸', title: '血液をサラサラに（EPA）', desc: '血栓の形成を抑え、血液の流れをスムーズにする効果があります。動脈硬化・心臓病・脳卒中のリスク低減に役立つと言われています。' },
+      { icon: '💆', title: '炎症を抑える', desc: '関節の炎症・アレルギー症状の緩和に効果があるとされています。魚を週に2〜3回食べることで、自然と摂取できるのが理想です。' },
+    ],
+  },
+  fiber: {
+    name: '食物繊維',
+    icons: '🥬🥦🍄🌾',
+    badge: '腸活・血糖',
+    colorClass: 'nc-blue',
+    foods: [
+      { emoji: '🥬', name: 'キャベツ' },
+      { emoji: '🥦', name: 'ブロッコリー' },
+      { emoji: '🍄', name: 'きのこ' },
+      { emoji: '🌾', name: 'うどん・麦' },
+    ],
+    effects: [
+      { icon: '🦠', title: '腸内環境を整える（腸活）', desc: '善玉菌のエサとなり、腸内フローラのバランスを改善します。便秘解消・お腹スッキリだけでなく、免疫力アップや肌荒れ改善にも効果が期待されています。' },
+      { icon: '📉', title: '血糖値の急上昇を抑える', desc: '食後の血糖値の上昇をゆるやかにし、インスリンの過剰分泌を防ぎます。糖尿病の予防・ダイエット中の血糖コントロールにも効果的です。' },
+      { icon: '💛', title: 'コレステロールを下げる', desc: '余分なコレステロールや胆汁酸を体外に排出する働きがあります。生活習慣病の予防に欠かせない栄養素として注目されています。' },
+    ],
+  },
+};
+
+// ============================================================
+// DATA
+// ============================================================
+const CATEGORIES = [
+  { id: 'all',    label: 'すべて 🍽' },
+  { id: 'meat',   label: '🥩 肉類' },
+  { id: 'fish',   label: '🐟 魚介' },
+  { id: 'veg',    label: '🥬 野菜' },
+  { id: 'tofu',   label: '🥚 豆腐・卵' },
+  { id: 'noodle', label: '🍜 麺・パスタ' },
+];
+
+const INGREDIENTS = [
+  { id: 'chicken',  name: '鶏もも肉', emoji: '🍗', category: 'meat' },
+  { id: 'pork',     name: '豚バラ',   emoji: '🥩', category: 'meat' },
+  { id: 'beef',     name: '牛肉',     emoji: '🥩', category: 'meat' },
+  { id: 'sausage',  name: 'ウインナー',emoji: '🌭', category: 'meat' },
+  { id: 'bacon',    name: 'ベーコン', emoji: '🥓', category: 'meat' },
+  { id: 'shrimp',   name: 'エビ',     emoji: '🦐', category: 'fish' },
+  { id: 'salmon',   name: 'サーモン', emoji: '🐟', category: 'fish' },
+  { id: 'squid',    name: 'イカ',     emoji: '🦑', category: 'fish' },
+  { id: 'tuna',     name: 'ツナ缶',   emoji: '🐠', category: 'fish' },
+  { id: 'cabbage',  name: 'キャベツ', emoji: '🥬', category: 'veg' },
+  { id: 'onion',    name: 'ネギ',     emoji: '🌿', category: 'veg' },
+  { id: 'potato',   name: 'じゃがいも',emoji:'🥔', category: 'veg' },
+  { id: 'tomato',   name: 'トマト',   emoji: '🍅', category: 'veg' },
+  { id: 'broccoli', name: 'ブロッコリー',emoji:'🥦',category:'veg' },
+  { id: 'mushroom', name: 'きのこ',   emoji: '🍄', category: 'veg' },
+  { id: 'tofu',     name: '豆腐',     emoji: '⬜', category: 'tofu' },
+  { id: 'egg',      name: '卵',       emoji: '🥚', category: 'tofu' },
+  { id: 'pasta',    name: 'パスタ',   emoji: '🍝', category: 'noodle' },
+  { id: 'udon',     name: 'うどん',   emoji: '🍜', category: 'noodle' },
+];
+
+const RECIPES = [
+  {
+    id: 1,
+    name: 'はさみ照り焼きチキン',
+    emoji: '🍗',
+    mainIngredient: 'chicken',
+    subIngredients: ['onion'],
+    time: 15, servings: 2, difficulty: 2,
+    desc: '鶏もも肉をバサミでカットしてそのままフライパンへ。甘辛タレがよく絡む定番おかず。',
+    scissors_tip: '肉を一口大に切ってからタレを絡めると均等に味が入る',
+    ingredients: [
+      { name: '鶏もも肉', amount: '1枚（300g）' },
+      { name: 'ネギ', amount: '1/2本' },
+      { name: '醤油', amount: '大さじ2' },
+      { name: 'みりん', amount: '大さじ2' },
+      { name: '砂糖', amount: '小さじ1' },
+      { name: 'サラダ油', amount: '小さじ1' },
+    ],
+    steps: [
+      { text: 'ネギをバサミで斜め薄切りにする。', scissors: true },
+      { text: '鶏もも肉の余分な脂をバサミで取り除き、一口大（約4cm）にカットする。', scissors: true },
+      { text: 'フライパンに油を熱し、鶏肉を皮目から中火で4〜5分焼く。' },
+      { text: '裏返して2〜3分焼いたら、醤油・みりん・砂糖を混ぜたタレを加える。' },
+      { text: 'タレを絡めながら照りが出るまで煮詰め、ネギを加えてひと混ぜして完成。' },
+    ],
+    tip: '鶏皮をパリッとさせたい場合は、最初にキッチンペーパーで水分をしっかり拭き取ってから焼くのがポイントです。',
+  },
+  {
+    id: 2,
+    name: 'はさみで作るチキンソテー',
+    emoji: '🍗',
+    mainIngredient: 'chicken',
+    subIngredients: ['broccoli', 'mushroom'],
+    time: 20, servings: 2, difficulty: 1,
+    desc: 'ハサミで均等にカットした鶏肉をシンプルに塩コショウで。副菜も一緒に仕上げる。',
+    scissors_tip: '鶏肉の厚い部分にバサミを入れて開くと火通りが均一に',
+    ingredients: [
+      { name: '鶏もも肉', amount: '1枚' },
+      { name: 'ブロッコリー', amount: '1/2房' },
+      { name: 'しめじ', amount: '1/2パック' },
+      { name: '塩', amount: '小さじ1/2' },
+      { name: 'コショウ', amount: '少々' },
+      { name: 'にんにく', amount: '1かけ' },
+    ],
+    steps: [
+      { text: 'ブロッコリーをバサミで小房に切り分ける。しめじは手でほぐす。', scissors: true },
+      { text: '鶏肉の厚い部分にバサミを入れて蝶々開きにし、塩コショウをまぶす。', scissors: true },
+      { text: 'フライパンに油とつぶしたにんにくを入れ、鶏肉を皮目から焼く（5分）。' },
+      { text: '裏返してブロッコリーとしめじを加え、蓋をして3分蒸し焼き。' },
+      { text: '火を通して完成。お好みでレモンを絞って。' },
+    ],
+    tip: 'ブロッコリーはバサミで切ると茎の断面が綺麗になり、炒め時間が均等になります。',
+  },
+  {
+    id: 3,
+    name: '豚バラキャベツのバサミ炒め',
+    emoji: '🥬',
+    mainIngredient: 'pork',
+    subIngredients: ['cabbage'],
+    time: 10, servings: 2, difficulty: 1,
+    desc: '豚バラもキャベツもバサミで鍋の上へ直接カット。洗い物ゼロへの近道レシピ。',
+    scissors_tip: '豚バラはまだ冷たいうちの方がバサミで切りやすい',
+    ingredients: [
+      { name: '豚バラ薄切り', amount: '200g' },
+      { name: 'キャベツ', amount: '1/4玉' },
+      { name: '醤油', amount: '大さじ1.5' },
+      { name: '酒', amount: '大さじ1' },
+      { name: 'ごま油', amount: '小さじ1' },
+      { name: 'にんにく', amount: '1かけ' },
+    ],
+    steps: [
+      { text: 'キャベツをバサミでザク切りにする（ざっくりでOK）。', scissors: true },
+      { text: '豚バラをフライパンの上でバサミで4〜5cm長さにカットする。', scissors: true },
+      { text: 'フライパンに豚バラとにんにくを入れ、中火で炒める。' },
+      { text: '豚バラに火が通ったらキャベツを加えてさらに炒める。' },
+      { text: '醤油・酒を加えて強火でさっと炒め合わせ、ごま油を回しかけて完成。' },
+    ],
+    tip: 'フライパンの上でハサミで切ると、まな板が不要で洗い物が格段に減ります！',
+  },
+  {
+    id: 4,
+    name: 'ウインナーとキャベツのスープ',
+    emoji: '🌭',
+    mainIngredient: 'sausage',
+    subIngredients: ['cabbage'],
+    time: 12, servings: 2, difficulty: 1,
+    desc: 'ウインナーにバサミで切り込みを入れてスープへ。旨みが溶け出す簡単ポトフ風。',
+    scissors_tip: 'ウインナーに斜めの切り込みを入れると火通りよく旨みも出やすい',
+    ingredients: [
+      { name: 'ウインナー', amount: '6本' },
+      { name: 'キャベツ', amount: '1/4玉' },
+      { name: '水', amount: '400ml' },
+      { name: 'コンソメ', amount: '1個' },
+      { name: '塩・コショウ', amount: '適量' },
+    ],
+    steps: [
+      { text: 'ウインナーにバサミで斜めの切り込みを3〜4本入れる。', scissors: true },
+      { text: 'キャベツをバサミで大きめにカットする。', scissors: true },
+      { text: '鍋に水とコンソメを入れて沸騰させる。' },
+      { text: 'ウインナーとキャベツを加え、中火で8分煮る。' },
+      { text: '塩コショウで味を調えて完成。' },
+    ],
+    tip: '切り込みを入れたウインナーは、スープに旨みが溶け出して風味豊かになります。',
+  },
+  {
+    id: 5,
+    name: 'サーモンのバサミムニエル',
+    emoji: '🐟',
+    mainIngredient: 'salmon',
+    subIngredients: ['broccoli'],
+    time: 15, servings: 2, difficulty: 2,
+    desc: 'サーモンの切り身を骨取りしてそのままフライパンへ。レモンバターが絶品。',
+    scissors_tip: '骨取りはバサミで骨の周りをつまみながら引き抜くとスムーズ',
+    ingredients: [
+      { name: 'サーモン切り身', amount: '2切れ' },
+      { name: 'ブロッコリー', amount: '1/2房' },
+      { name: '小麦粉', amount: '大さじ1' },
+      { name: 'バター', amount: '15g' },
+      { name: 'レモン汁', amount: '小さじ2' },
+      { name: '塩・コショウ', amount: '適量' },
+    ],
+    steps: [
+      { text: 'ブロッコリーをバサミで小房に切り分ける。', scissors: true },
+      { text: 'サーモンに塩コショウをふり、小麦粉を薄くはたく。' },
+      { text: 'フライパンにバターを熱し、サーモンを皮目から焼く（3〜4分）。' },
+      { text: '裏返してブロッコリーを加え、蓋をして3分蒸し焼き。' },
+      { text: 'レモン汁を回しかけて完成。' },
+    ],
+    tip: 'サーモンはバサミで大きな骨を取り除くと、食べやすさが格段にアップします。',
+  },
+  {
+    id: 6,
+    name: '豆腐のバサミステーキ',
+    emoji: '⬜',
+    mainIngredient: 'tofu',
+    subIngredients: ['onion'],
+    time: 10, servings: 2, difficulty: 1,
+    desc: '豆腐をバサミで厚めにスライス。表面カリカリ、中はとろとろの食感が楽しめる。',
+    scissors_tip: '木綿豆腐をパックごとバサミで切ると崩れずスライスできる',
+    ingredients: [
+      { name: '木綿豆腐', amount: '1丁' },
+      { name: 'ネギ', amount: '1/3本' },
+      { name: '醤油', amount: '大さじ1' },
+      { name: 'みりん', amount: '大さじ1' },
+      { name: 'ごま油', amount: '小さじ2' },
+      { name: '片栗粉', amount: '大さじ1' },
+    ],
+    steps: [
+      { text: 'ネギをバサミで小口切りにする。', scissors: true },
+      { text: '豆腐をパックのままバサミで2〜3cm厚さに切る（横から入れる）。', scissors: true },
+      { text: '豆腐の水分をキッチンペーパーで拭き、片栗粉をまぶす。' },
+      { text: 'フライパンにごま油を熱し、豆腐を中火で両面焼く（各3分）。' },
+      { text: '醤油とみりんを加えて絡め、ネギを散らして完成。' },
+    ],
+    tip: 'パックのまま切ることで豆腐が崩れにくく、形よく仕上がります。',
+  },
+  {
+    id: 7,
+    name: 'ベーコンエッグとじ丼',
+    emoji: '🥚',
+    mainIngredient: 'egg',
+    subIngredients: ['bacon', 'onion'],
+    time: 8, servings: 1, difficulty: 1,
+    desc: 'ベーコンをバサミでカットしてそのまま丼に。朝食にも夜食にも使える万能レシピ。',
+    scissors_tip: 'ベーコンはバサミで細かく切るとたれと絡みやすくなる',
+    ingredients: [
+      { name: 'ベーコン', amount: '3枚' },
+      { name: '卵', amount: '2個' },
+      { name: 'ネギ', amount: '少々' },
+      { name: '醤油', amount: '大さじ1' },
+      { name: 'みりん', amount: '大さじ1' },
+      { name: 'だし', amount: '50ml' },
+    ],
+    steps: [
+      { text: 'ベーコンをバサミで1〜2cm幅にカット。ネギも小口切りにする。', scissors: true },
+      { text: '小さめのフライパンにだし・醤油・みりんを入れて温める。' },
+      { text: 'ベーコンを加えて1〜2分煮る。' },
+      { text: '溶き卵を回し入れ、半熟状になったら火を止める。' },
+      { text: 'ご飯の上にのせ、ネギを散らして完成。' },
+    ],
+    tip: '卵を入れたら蓋をせずに弱火で。半熟が美味しさのポイントです。',
+  },
+  {
+    id: 8,
+    name: 'ツナとキャベツのバサミパスタ',
+    emoji: '🍝',
+    mainIngredient: 'pasta',
+    subIngredients: ['tuna', 'cabbage'],
+    time: 18, servings: 2, difficulty: 2,
+    desc: '茹で上がったパスタをバサミでカット。キャベツもバサミでざく切り。一気に完成。',
+    scissors_tip: '茹でたパスタはバサミで皿の上で食べやすくカットできる',
+    ingredients: [
+      { name: 'スパゲッティ', amount: '160g' },
+      { name: 'ツナ缶', amount: '1缶' },
+      { name: 'キャベツ', amount: '2枚' },
+      { name: 'にんにく', amount: '1かけ' },
+      { name: 'オリーブオイル', amount: '大さじ2' },
+      { name: '醤油', amount: '小さじ2' },
+      { name: '塩・コショウ', amount: '適量' },
+    ],
+    steps: [
+      { text: 'キャベツをバサミでざく切りにする。', scissors: true },
+      { text: 'パスタをバサミで半分に折ってから茹でる（表示より1分短め）。', scissors: true },
+      { text: 'フライパンにオリーブオイルとにんにくを熱し、キャベツを炒める。' },
+      { text: 'ツナ缶（油ごと）を加えて炒め合わせる。' },
+      { text: '茹で上がったパスタと茹で汁大さじ2を加え、醤油・塩コショウで味を調えて完成。' },
+    ],
+    tip: 'パスタを半分に折ってから茹でると、短い鍋でもOKで時短にもなります。',
+  },
+  {
+    id: 9,
+    name: 'エビとブロッコリーのバサミ炒め',
+    emoji: '🦐',
+    mainIngredient: 'shrimp',
+    subIngredients: ['broccoli'],
+    time: 15, servings: 2, difficulty: 2,
+    desc: 'エビの背わたをバサミで簡単に取り除いてそのまま炒め物に。旨みたっぷり中華風。',
+    scissors_tip: 'エビの背中にバサミを入れると背わたが一気に取れる',
+    ingredients: [
+      { name: 'エビ', amount: '12尾' },
+      { name: 'ブロッコリー', amount: '1/2房' },
+      { name: 'にんにく', amount: '1かけ' },
+      { name: '醤油', amount: '大さじ1' },
+      { name: '酒', amount: '大さじ1' },
+      { name: 'オイスターソース', amount: '小さじ2' },
+    ],
+    steps: [
+      { text: 'エビの背中にバサミを入れ、背わたを取り除く。殻もバサミで切ると剥きやすい。', scissors: true },
+      { text: 'ブロッコリーをバサミで小房に切り分ける。', scissors: true },
+      { text: 'フライパンにごま油とにんにくを熱し、エビを炒める（2〜3分）。' },
+      { text: 'ブロッコリーを加えて炒め、醤油・酒・オイスターソースで味付けする。' },
+      { text: '全体に火が通ったら完成。ご飯によく合います。' },
+    ],
+    tip: 'エビの背わた取りはバサミが最も簡単！背中から入れるだけで素早く処理できます。',
+  },
+  {
+    id: 10,
+    name: '鶏ネギのはさみうどん',
+    emoji: '🍜',
+    mainIngredient: 'udon',
+    subIngredients: ['chicken', 'onion'],
+    time: 12, servings: 2, difficulty: 1,
+    desc: 'うどんもネギも鶏肉もバサミで切ってそのまま鍋へ。麺をほぐすのもバサミにおまかせ。',
+    scissors_tip: '冷凍うどんは解凍後にバサミで食べやすい長さにカットできる',
+    ingredients: [
+      { name: 'うどん（冷凍）', amount: '2玉' },
+      { name: '鶏もも肉', amount: '1/2枚' },
+      { name: 'ネギ', amount: '1/2本' },
+      { name: 'だし汁', amount: '600ml' },
+      { name: '醤油', amount: '大さじ2' },
+      { name: 'みりん', amount: '大さじ1' },
+    ],
+    steps: [
+      { text: 'ネギをバサミで斜め切りにする。鶏肉をバサミで一口大に切る。', scissors: true },
+      { text: '鍋にだし・醤油・みりんを入れて沸騰させる。' },
+      { text: '鶏肉とネギを加えて中火で5分煮る。' },
+      { text: 'うどんを加え、バサミで食べやすい長さにカットしながら2〜3分煮る。', scissors: true },
+      { text: '鶏肉に火が通ったら完成。お好みで七味をかけて。' },
+    ],
+    tip: 'うどんをバサミで切ると子供やお年寄りにも食べやすく、汁はねも防げます。',
+  },
+];
+
+// ============================================================
+// APP LOGIC
+// ============================================================
+let selectedIngredient = null;
+let activeCategory = 'all';
+
+function init() {
+  document.getElementById('totalCount').textContent = RECIPES.length + '品';
+  buildCategoryTabs();
+  buildIngredients('all');
+}
+
+function buildCategoryTabs() {
+  const container = document.getElementById('categoryTabs');
+  container.innerHTML = CATEGORIES.map(c => `
+    <button class="cat-tab ${c.id === 'all' ? 'active' : ''}" onclick="filterCategory('${c.id}')">${c.label}</button>
+  `).join('');
+}
+
+function filterCategory(catId) {
+  activeCategory = catId;
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  buildIngredients(catId);
+}
+
+function buildIngredients(catId) {
+  const filtered = catId === 'all' ? INGREDIENTS : INGREDIENTS.filter(i => i.category === catId);
+  const container = document.getElementById('ingredientsGrid');
+  container.innerHTML = filtered.map(ing => {
+    const recipeCount = RECIPES.filter(r => r.mainIngredient === ing.id || r.subIngredients.includes(ing.id)).length;
+    return `
+      <div class="ingredient-card ${selectedIngredient === ing.id ? 'selected' : ''}"
+           onclick="selectIngredient('${ing.id}', '${ing.name}', '${ing.emoji}')">
+        <span class="ingredient-emoji">${ing.emoji}</span>
+        <div class="ingredient-name">${ing.name}</div>
+        <div class="ingredient-count">${recipeCount}品</div>
+      </div>`;
+  }).join('');
+}
+
+function selectIngredient(id, name, emoji) {
+  selectedIngredient = selectedIngredient === id ? null : id;
+  buildIngredients(activeCategory);
+  if (selectedIngredient) {
+    showRecipes(id, name, emoji);
+    setTimeout(() => document.getElementById('recipesSection').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  } else {
+    clearRecipes();
+  }
+}
+
+function showRecipes(ingredientId, name, emoji) {
+  const matched = RECIPES.filter(r => r.mainIngredient === ingredientId || r.subIngredients.includes(ingredientId));
+
+  document.getElementById('selectedTag').innerHTML = `
+    <div class="selected-tag">
+      <span>${emoji}</span>${name}のレシピ
+    </div>`;
+  document.getElementById('resultCount').textContent = `${matched.length}品見つかりました✨`;
+
+  const grid = document.getElementById('recipesGrid');
+  if (matched.length === 0) {
+    grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
+      <div class="empty-icon">${emoji}</div>
+      <div class="empty-text">まだレシピがありません</div>
+      <div class="empty-sub">近日追加予定です！</div></div>`;
+    return;
+  }
+
+  grid.innerHTML = matched.map((r, i) => {
+    const dots = Array.from({ length: 3 }, (_, di) =>
+      `<div class="diff-dot ${di < r.difficulty ? 'filled' : ''}"></div>`).join('');
+    return `
+      <div class="recipe-card" style="animation-delay:${i*0.08}s" onclick="openModal(${r.id})">
+        <div class="recipe-thumb">
+          ${r.emoji}
+          <div class="time-badge">⏱ ${r.time}分</div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-tags">
+            <span class="recipe-tag main">✂ バサミ活躍</span>
+            ${r.subIngredients.slice(0,2).map(s => {
+              const ing = INGREDIENTS.find(i => i.id === s);
+              return ing ? `<span class="recipe-tag sub">${ing.emoji} ${ing.name}</span>` : '';
+            }).join('')}
+          </div>
+          <div class="recipe-name">${r.name}</div>
+          <div class="recipe-desc">${r.desc}</div>
+          <div class="scissors-tip">✂ ${r.scissors_tip}</div>
+          <div class="recipe-footer">
+            <div class="difficulty">${dots}</div>
+            <div class="recipe-servings">👨‍👩‍👦 ${r.servings}人分</div>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function clearRecipes() {
+  document.getElementById('selectedTag').innerHTML = '';
+  document.getElementById('resultCount').textContent = '';
+  document.getElementById('recipesGrid').innerHTML = `
+    <div class="empty-state" style="grid-column:1/-1">
+      <div class="empty-icon">✂</div>
+      <div class="empty-text">食材を選んでレシピを探そう♪</div>
+      <div class="empty-sub">上のメニューから食材を選択してください</div>
+    </div>`;
+}
+
+function openModal(recipeId) {
+  const r = RECIPES.find(r => r.id === recipeId);
+  if (!r) return;
+
+  document.getElementById('modalHero').innerHTML = `
+    <span style="font-size:96px">${r.emoji}</span>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="time-badge">⏱ ${r.time}分</div>`;
+
+  document.getElementById('modalBody').innerHTML = `
+    <h2 class="modal-title">${r.name}</h2>
+    <div class="modal-meta">
+      <div class="meta-chip">⏱ ${r.time}分</div>
+      <div class="meta-chip">👥 ${r.servings}人分</div>
+      <div class="meta-chip">★ ${ ['かんたん','ふつう','本格的'][r.difficulty-1]}</div>
+    </div>
+    <p class="modal-desc">${r.desc}</p>
+
+    <div class="modal-section-title"><span class="ms-dot"></span>材料</div>
+    <ul class="ingredients-list">
+      ${r.ingredients.map(i => `<li><span>${i.name}</span><span class="amount">${i.amount}</span></li>`).join('')}
+    </ul>
+
+    <div class="modal-section-title"><span class="ms-dot"></span>作り方</div>
+    <ol class="steps-list">
+      ${r.steps.map((s, i) => `
+        <li class="step-item">
+          <div class="step-num">${i+1}</div>
+          <div class="step-text ${s.scissors ? 'scissors-step' : ''}">${s.scissors ? '✂ ' : ''}${s.text}</div>
+        </li>`).join('')}
+    </ol>
+
+    ${r.tip ? `<div class="modal-tip"><strong>💡 バサミのコツ</strong>${r.tip}</div>` : ''}`;
+
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e && e.target !== document.getElementById('modalOverlay') && !e.target.classList.contains('modal-close')) return;
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ============================================================
+// NUTRITION MODAL
+// ============================================================
+function openNutriModal(id) {
+  const d = NUTRI_DATA[id];
+  if (!d) return;
+
+  // カラークラスからグラデーション色を取得
+  const gradMap = {
+    'nc-yellow': 'linear-gradient(135deg,#FFF3CD,#FFE89A)',
+    'nc-orange': 'linear-gradient(135deg,#FFE8CC,#FFCE99)',
+    'nc-teal':   'linear-gradient(135deg,#D0F5F3,#9EEAE7)',
+    'nc-red':    'linear-gradient(135deg,#FFD6D6,#FFB3B3)',
+    'nc-green':  'linear-gradient(135deg,#D4F5E6,#A8EDD0)',
+    'nc-purple': 'linear-gradient(135deg,#EDE0FF,#D6BEFF)',
+    'nc-pink':   'linear-gradient(135deg,#FFE0F0,#FFC2E0)',
+    'nc-blue':   'linear-gradient(135deg,#D6EEFF,#A8D8FF)',
+  };
+  const grad = gradMap[d.colorClass] || 'linear-gradient(135deg,#f5f5f5,#eee)';
+
+  document.getElementById('nutriModalHero').style.background = grad;
+  document.getElementById('nutriModalHero').innerHTML = `
+    <button class="nutri-modal-close" onclick="closeNutriModal()">✕</button>
+    <div class="nutri-modal-icons">${d.icons}</div>
+    <div class="nutri-modal-name">${d.name}</div>
+    <span class="nutri-modal-badge">${d.badge}</span>
+  `;
+
+  document.getElementById('nutriModalBody').innerHTML = `
+    <div class="nutri-modal-section">
+      <div class="nutri-modal-section-title">含まれる食材</div>
+      <div class="nutri-food-tags">
+        ${d.foods.map(f => `<span class="nutri-food-tag">${f.emoji} ${f.name}</span>`).join('')}
+      </div>
+    </div>
+    <div class="nutri-modal-section">
+      <div class="nutri-modal-section-title">期待できる効果・はたらき</div>
+      <div class="nutri-effect-box">
+        ${d.effects.map(e => `
+          <p><strong>${e.icon} ${e.title}</strong><br>${e.desc}</p>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('nutriModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNutriModal(e) {
+  if (e && e.target !== document.getElementById('nutriModalOverlay') && !e.target.classList.contains('nutri-modal-close')) return;
+  document.getElementById('nutriModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+init();
+</script>
+</body>
+</html>
